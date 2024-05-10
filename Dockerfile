@@ -60,6 +60,7 @@ RUN steamcmd +quit
 
 # If you need to make local edits to the management script copy it to the same
 # directory as this file, comment out the above line and uncomment this line:
+RUN curl -o manage-tModLoaderServer.sh https://raw.githubusercontent.com/waphun/terraria-tmodloader-server/main/manage-tModLoaderServer.sh
 COPY --chown=tml:tml manage-tModLoaderServer.sh .
 
 RUN ./manage-tModLoaderServer.sh install-tml --github --tml-version $TML_VERSION
